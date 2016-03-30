@@ -10,7 +10,7 @@ import UIKit
 
 class ImageCollectionViewController: UICollectionViewController {
 
-  let imageService = ImageServiceTest()
+  let imageService = ImageServiceProd()
   var images = Array<UIImage>()
 
   override func viewDidLoad() {

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import SwiftHTTP
+
 
 protocol ImageService {
   func fetchImages(completion: ((images: Array<UIImage>) -> Void))
 }
 
-class ImageServiceTest {
+class ImageServiceTest : ImageService {
   func fetchImages(completion: ((images: Array<UIImage>) -> Void)) {
     let images = [
       "img1",
@@ -22,5 +24,23 @@ class ImageServiceTest {
       "img5",
     ].map{UIImage(named: $0)!}
     completion(images: images)
+  }
+}
+
+class ImageServiceProd : ImageService {
+
+  let galleryURL = "https://api.imgur.com/3/gallery/r/aww/0.json"
+  let clientID = "571e513e26d20b1"
+
+  func fetchImages(completion: ((images: Array<UIImage>) -> Void)) {
+    do {
+      let request = try HTTP.GET(self.galleryURL,
+          headers: ["Authorization": "Client-ID \(self.clientID)"])
+      request.start { response in
+        print("response: \(response.description)")
+      }
+    } catch let error {
+      print("couldn't serialize the paraemeters: \(error)")
+    }
   }
 }
