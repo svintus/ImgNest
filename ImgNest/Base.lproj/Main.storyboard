@@ -21,10 +21,10 @@
             </objects>
             <point key="canvasLocation" x="585" y="446"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Image Collection View Controller-->
         <scene sceneID="eek-RQ-a7y">
             <objects>
-                <collectionViewController id="Bus-4H-B9d" sceneMemberID="viewController">
+                <collectionViewController id="Bus-4H-B9d" customClass="ImageCollectionViewController" customModule="ImgNest" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Bjc-0g-iHx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,16 +35,28 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="mbG-Yd-InP">
-                                <rect key="frame" x="0.0" y="64" width="50" height="50"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="mbG-Yd-InP">
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="42" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vF8-SU-PQJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="vF8-SU-PQJ" firstAttribute="width" secondItem="mbG-Yd-InP" secondAttribute="width" id="Ig2-pW-qr1"/>
+                                    <constraint firstItem="vF8-SU-PQJ" firstAttribute="centerY" secondItem="mbG-Yd-InP" secondAttribute="centerY" id="Kjk-yk-4nh"/>
+                                    <constraint firstItem="vF8-SU-PQJ" firstAttribute="centerX" secondItem="mbG-Yd-InP" secondAttribute="centerX" id="dVk-p8-70x"/>
+                                    <constraint firstItem="vF8-SU-PQJ" firstAttribute="height" secondItem="mbG-Yd-InP" secondAttribute="height" id="eM5-3n-Hqb"/>
+                                </constraints>
+                                <size key="customSize" width="100" height="100"/>
                                 <connections>
-                                    <segue destination="bnt-q3-nuw" kind="showDetail" id="91k-GP-cHL"/>
+                                    <segue destination="bnt-q3-nuw" kind="show" action="showDetailViewController:sender:" id="91k-GP-cHL"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
