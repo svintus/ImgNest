@@ -42,6 +42,8 @@ class ImageServiceProd : ImageService {
         /*print("response JSON: \(json)")*/
 
         let imageURLS = json["data"].arrayValue.map{$0["link"].string!}
+          .filter{$0.hasSuffix(".jpg")}
+          .prefix(20)
         /*print("imageURLs: \(imageURLS)")*/
 
         let images: Array<UIImage> =
@@ -49,7 +51,9 @@ class ImageServiceProd : ImageService {
             let data = NSData(contentsOfURL: NSURL(string: imageURL)!)
             return UIImage(data: data!)!
           }
-        completion(images: images)
+        dispatch_async(dispatch_get_main_queue()) {
+          completion(images: images)
+        }
       }
     } catch let error {
       print("couldn't serialize the paraemeters: \(error)")
