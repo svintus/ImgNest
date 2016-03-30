@@ -13,6 +13,7 @@
 		2C28CA241CAB480C00690B11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C28CA221CAB480C00690B11 /* LaunchScreen.storyboard */; };
 		2C28CA2C1CAB506700690B11 /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28CA2B1CAB506700690B11 /* ImageCollectionViewController.swift */; };
 		2C28CA2E1CAB56D900690B11 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28CA2D1CAB56D900690B11 /* ImageViewController.swift */; };
+		2C28CA301CAB601700690B11 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C28CA2F1CAB601700690B11 /* ImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		2C28CA251CAB480C00690B11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2C28CA2B1CAB506700690B11 /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		2C28CA2D1CAB56D900690B11 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		2C28CA2F1CAB601700690B11 /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				2C28CA251CAB480C00690B11 /* Info.plist */,
 				2C28CA2B1CAB506700690B11 /* ImageCollectionViewController.swift */,
 				2C28CA2D1CAB56D900690B11 /* ImageViewController.swift */,
+				2C28CA2F1CAB601700690B11 /* ImageService.swift */,
 			);
 			path = ImgNest;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C28CA2C1CAB506700690B11 /* ImageCollectionViewController.swift in Sources */,
+				2C28CA301CAB601700690B11 /* ImageService.swift in Sources */,
 				2C28CA2E1CAB56D900690B11 /* ImageViewController.swift in Sources */,
 				2C28CA1A1CAB480C00690B11 /* AppDelegate.swift in Sources */,
 			);

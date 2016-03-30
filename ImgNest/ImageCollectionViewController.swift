@@ -10,17 +10,16 @@ import UIKit
 
 class ImageCollectionViewController: UICollectionViewController {
 
-  var images: Array<String>!
+  let imageService = ImageServiceTest()
+  var images = Array<UIImage>()
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.images = [
-      "img1",
-      "img2",
-      "img3",
-      "img4",
-      "img5",
-    ]
+
+    imageService.fetchImages { images in
+      self.images = images
+      self.collectionView?.reloadData()
+    }
   }
   
   override func collectionView(collectionView: UICollectionView,
@@ -34,9 +33,9 @@ class ImageCollectionViewController: UICollectionViewController {
    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell",
        forIndexPath: indexPath)
    let imageView = cell.viewWithTag(42) as! UIImageView
-   let image = UIImage(named: self.images[indexPath.row])
+   let image = self.images[indexPath.row]
    print("image: \(image)")
-   imageView.image = UIImage(named: self.images[indexPath.row])
+   imageView.image = self.images[indexPath.row]
    
    return cell
   }
@@ -46,7 +45,7 @@ class ImageCollectionViewController: UICollectionViewController {
       let viewController = segue.destinationViewController
         as! ImageViewController
       let indexPath = self.collectionView!.indexPathsForSelectedItems()!.first!
-      let image = UIImage(named: self.images[indexPath.row])
+      let image = self.images[indexPath.row]
       viewController.image = image
     }
   }
