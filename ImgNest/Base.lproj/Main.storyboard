@@ -56,7 +56,7 @@
                                 </constraints>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
-                                    <segue destination="bnt-q3-nuw" kind="show" id="sNC-JR-jbE"/>
+                                    <segue destination="bnt-q3-nuw" kind="show" identifier="showImage" id="sNC-JR-jbE"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="1270" y="433"/>
         </scene>
-        <!--View Controller-->
+        <!--Image View Controller-->
         <scene sceneID="LW1-WF-vbP">
             <objects>
-                <viewController id="bnt-q3-nuw" sceneMemberID="viewController">
+                <viewController id="bnt-q3-nuw" customClass="ImageViewController" customModule="ImgNest" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="W2e-RJ-MrJ"/>
                         <viewControllerLayoutGuide type="bottom" id="SbI-Vt-AI3"/>
@@ -82,9 +82,23 @@
                     <view key="view" contentMode="scaleToFill" id="eer-nR-RL4">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdN-br-ltd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="OdN-br-ltd" firstAttribute="width" secondItem="eer-nR-RL4" secondAttribute="width" id="4Fd-4K-iec"/>
+                            <constraint firstItem="OdN-br-ltd" firstAttribute="centerX" secondItem="eer-nR-RL4" secondAttribute="centerX" id="Pco-Xk-luo"/>
+                            <constraint firstItem="OdN-br-ltd" firstAttribute="centerY" secondItem="eer-nR-RL4" secondAttribute="centerY" id="WXQ-rx-TBU"/>
+                            <constraint firstItem="OdN-br-ltd" firstAttribute="height" secondItem="eer-nR-RL4" secondAttribute="height" id="ihB-nh-CIv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="txB-Eh-Pnl"/>
+                    <connections>
+                        <outlet property="imageView" destination="OdN-br-ltd" id="hsW-Ip-TzA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1n-ka-Wz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

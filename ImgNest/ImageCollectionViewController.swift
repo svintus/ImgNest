@@ -40,4 +40,14 @@ class ImageCollectionViewController: UICollectionViewController {
    
    return cell
   }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if (segue.identifier == "showImage") {
+      let viewController = segue.destinationViewController
+        as! ImageViewController
+      let indexPath = self.collectionView!.indexPathsForSelectedItems()!.first!
+      let image = UIImage(named: self.images[indexPath.row])
+      viewController.image = image
+    }
+  }
 }
