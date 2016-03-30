@@ -3,5 +3,6 @@ use_frameworks!
 
 target 'ImgNest' do
 pod 'SwiftHTTP'
+pod 'SwiftyJSON'
 end
 

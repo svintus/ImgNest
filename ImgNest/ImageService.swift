@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftHTTP
+import SwiftyJSON
 
 
 protocol ImageService {
@@ -37,7 +38,18 @@ class ImageServiceProd : ImageService {
       let request = try HTTP.GET(self.galleryURL,
           headers: ["Authorization": "Client-ID \(self.clientID)"])
       request.start { response in
-        print("response: \(response.description)")
+        let json = JSON(data: response.data)
+        /*print("response JSON: \(json)")*/
+
+        let imageURLS = json["data"].arrayValue.map{$0["link"].string!}
+        /*print("imageURLs: \(imageURLS)")*/
+
+        let images: Array<UIImage> =
+          imageURLS.map { (imageURL: String) in
+            let data = NSData(contentsOfURL: NSURL(string: imageURL)!)
+            return UIImage(data: data!)!
+          }
+        completion(images: images)
       }
     } catch let error {
       print("couldn't serialize the paraemeters: \(error)")
