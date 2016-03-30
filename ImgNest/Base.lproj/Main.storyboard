@@ -56,7 +56,7 @@
                                 </constraints>
                                 <size key="customSize" width="100" height="100"/>
                                 <connections>
-                                    <segue destination="bnt-q3-nuw" kind="show" action="showDetailViewController:sender:" id="91k-GP-cHL"/>
+                                    <segue destination="bnt-q3-nuw" kind="show" id="sNC-JR-jbE"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -84,6 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="txB-Eh-Pnl"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D1n-ka-Wz5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
